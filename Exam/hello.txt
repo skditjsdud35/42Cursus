@@ -1,0 +1,7 @@
+Assignment name : hello
+Expected files : hello.c
+Allowed functions: write
+
+--------------------------------------------------------------------------------
+
+Write a program that displays "Hello World!" followed by a \n.
