@@ -1,0 +1,5 @@
+- Create a function ft_div_mod prototyped like this :
+**void ft_div_mod(int a, int b, int *div, int *mod);**
+
+- This function divides parameters a by b and stores the result in the int pointed by div. It also stores the remainder of the division of a by b in the int pointed by mod.
+- 이 함수는 매개변수 a를 b로 나누고 결과를 div가 가리키는 int에 저장합니다. 또한 mod가 가리키는 int에 b로 나눈 나머지를 저장합니다.
