@@ -36,7 +36,7 @@ SRCS = \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
 		ft_strnstr.c \
-		ft_split
+		ft_split.c
 B_SRCS = \
 		ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -61,7 +61,6 @@ bonus: $(OBJS) $(B_OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 	ar rc $(NAME) $@
-# 오브젝트 파일을 생성할 때마다 아카이브에 추가한다.
 		
 clean:
 	    rm -f $(OBJS) $(B_OBJS)

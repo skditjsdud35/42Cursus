@@ -6,7 +6,7 @@
 /*   By: sunahn <sunahn@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/23 16:49:20 by sunahn            #+#    #+#             */
-/*   Updated: 2022/03/26 17:15:33 by sunahn           ###   ########.fr       */
+/*   Updated: 2022/03/31 18:11:18 by sunahn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-	char	*cdst;
-	char	*csrc;
+	size_t			i;
+	unsigned char	*cdst;
+	unsigned char	*csrc;
 
-	cdst = (char *)dst;
-	csrc = (char *)src;
+	if (!dst && !src)
+		return (0);
+	cdst = (unsigned char *)dst;
+	csrc = (unsigned char *)src;
 	i = 0;
-	if (cdst == csrc)
-		return (cdst);
 	while (i < n)
 	{
 		cdst[i] = csrc[i];

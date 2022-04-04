@@ -6,24 +6,23 @@
 /*   By: sunahn <sunahn@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/24 15:05:57 by sunahn            #+#    #+#             */
-/*   Updated: 2022/03/26 17:30:27 by sunahn           ###   ########.fr       */
+/*   Updated: 2022/03/31 16:14:15 by sunahn           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	chk_c(char c, char *charset)
+int	get_len(char const *str, char charset)
 {
 	int	i;
 
 	i = 0;
-	while (charset[i] != '\0')
+	while (*str && *str != charset)
 	{
-		if (c == charset[i])
-			return (1);
+		str++;
 		i++;
 	}
-	return (0);
+	return (i);
 }
 
 int	get_count(char const *str, char charset)
@@ -35,63 +34,57 @@ int	get_count(char const *str, char charset)
 	count = 0;
 	while (str[i] != '\0')
 	{
-		if ((chk_c(str[i], charset) == 1) && (chk_c(str[i + 1], charset) == 0))
+		if (str[i] != charset)
+		{	
 			count++;
-		else if (i == 0 && chk_c(str[i], charset) == 0)
-			count++;
+			while (str[i] && str[i] != charset)
+				i++;
+			if (!str[i])
+				break ;
+		}
 		i++;
 	}
 	return (count);
 }
 
-void	ft_strcpy(char *result, char *str, int size)
-{
-	int	idx;
-
-	idx = 0;
-	while (idx < size)
-	{
-		result[idx] = str[idx];
-		idx++;
-	}
-	result[idx] = '\0';
-}
-
 char	**ft_free_all(char **str)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	while (!str[i])
-		free(str[i++]);
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
 	free(str);
 	return (0);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**result;
 	int		idx;
-	int		i;
+	int		len;
 
-	result = (char **)malloc(sizeof(char *) * (get_count(str, c) + 1));
+	if (!s)
+		return (0);
+	result = (char **)malloc(sizeof(char *) * (get_count(s, c) + 1));
 	if (!result)
 		return (0);
 	idx = 0;
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		i = 0;
-		if (chk_c(*str, c) == 0)
+		if (*s != c)
 		{
-			while (chk_c(*(str + i), c) == 0 && *(str + i) != '\0')
-				i++;
-			result[idx] = (char *)malloc(sizeof(char) * i + 1);
+			len = get_len(s, c);
+			result[idx] = (char *)malloc(len + 1);
 			if (!result[idx])
 				return (ft_free_all(result));
-			ft_strcpy(result[idx++], (char *)str, i);
-			str += i - 1;
+			ft_strlcpy(result[idx++], s, len + 1);
+			s += len - 1;
 		}
-		str++;
+		s++;
 	}
 	result[idx] = 0;
 	return (result);
