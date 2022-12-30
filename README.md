@@ -1,6 +1,6 @@
 # 42SEOUL CURSUS (2022.03.07 ~ Ongoing)
 
-## sunahn's status
+## sunahn's project
 |Order|Circle|Project|Stack|Status & Score| Details|
 |---|---|---|---|---|---|
 |00|00|Libft|C|Success 125 / 100|Notion|
