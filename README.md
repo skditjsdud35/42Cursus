@@ -1,6 +1,5 @@
 # 42SEOUL CURSUS (2022.03.07 ~ 2022.11.18)
-
-## [sunahn's project] 42서울 과제 레파지토리입니다
+## 42서울 과제 레파지토리
 |Order|Circle|Project|Stack|Status & Score| Details|
 |---|---|---|---|---|---|
 |00|00|Libft|C|Success 125 / 100|Notion|
