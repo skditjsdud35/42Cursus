@@ -7,4 +7,4 @@
 |02|01|get_next_line|C|Success 125 / 100|Notion|
 |03|01|Born2beroot|LINUX|Success 100 / 100|Notion|
 |04|02|Minitalk|C|Success 100 / 100|Notion|
-|04|02|SoLong|C|Success 100 / 100|Notion|
+|05|02|SoLong|C|Success 100 / 100|Notion|
