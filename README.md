@@ -1,7 +1,7 @@
 # 42SEOUL CURSUS (2022.03.07 ~ Ongoing)
 
 |Order|Circle|Project|Stack|Status & Score| Details|
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 |00|00|Libft|C|Success 125 / 100|Notion|
 |01|01|ft_printf|C|Success 100 / 100|Notion|
 |02|01|get_next_line|C|Success 125 / 100|Notion|
